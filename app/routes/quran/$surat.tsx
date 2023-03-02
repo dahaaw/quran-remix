@@ -2,6 +2,7 @@ import type { LoaderFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react';
 import surat from '~/data/surat.json';
 import detailSurats from '~/data/surat/index.js'
+import lib from '~/lib';
 
 export const loader: LoaderFunction = ( { params }) => {
 
@@ -24,7 +25,16 @@ function Surat( { request }:any ) {
           return(
             <div key={ i } className='mt-8 pb-2 border-b'>
               <div className='text-right text-lg'>{ v.ar }</div>
-              <div className='text-xs mt-2'>{ v.idn }</div>
+              <div className='text-xs mt-2'>{ v.nomor }. { v.idn }</div>
+
+              <div 
+                className='text-xs text-right text-gray-500 cursor-pointer'
+                onClick={ (e) => {
+                  lib.copy( i )
+                }}
+              >
+                  salin
+              </div>
             </div>
           )
         }) }
