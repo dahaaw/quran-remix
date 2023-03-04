@@ -12,10 +12,10 @@ import {
 import styles from "./tailwind.css";
 import { 
   BookOpenIcon,
-  BookmarkIcon,
   UserIcon,
   HomeIcon,
-  Cog6ToothIcon
+  Cog6ToothIcon,
+  MagnifyingGlassIcon,
 } from "@heroicons/react/24/solid";
 
 export const loader: LoaderFunction = ( { request } ) => {
@@ -78,8 +78,8 @@ const Footer = ( { activeMenu }:any ) => {
         <Link to="/">
           <HomeIcon height={30} color={ activeMenu === 'home' ? 'black' : 'grey' } />
         </Link>
-        <Link to="/saved">
-          <BookmarkIcon height={30} color={ activeMenu === 'saved' ? 'black' : 'grey' } />
+        <Link to="/search">
+          <MagnifyingGlassIcon height={30} color={ activeMenu === 'search' ? 'black' : 'grey' } />
         </Link>
         <Link to="/quran">
           <BookOpenIcon height={30} color={ activeMenu === 'quran' ? 'black' : 'grey' } />
@@ -103,7 +103,7 @@ const Logo = () => {
 
 const menuActiveSet = ( url:any ) => {
   let menuActive = 'home';  
-  if( url.includes( '/saved' ) ) menuActive = 'saved';
+  if( url.includes( '/search' ) ) menuActive = 'search';
   if( url.includes( '/quran' ) ) menuActive = 'quran';
   if( url.includes( '/setting' ) ) menuActive = 'setting';
   if( url.includes( '/account' ) ) menuActive = 'account';

@@ -117,7 +117,7 @@ export default {
     "Al-Fatihah": AlFatihah,
     "Al-Baqarah": AlBaqarah,
     "Ali 'Imran": AliImran,
-    "An-Nisa": AnNisa,
+    "An-Nisa'": AnNisa,
     "Al-Ma'idah": AlMaidah,
     "Al-An'am": AlAnam,
     "Al-A'raf": AlAraf,

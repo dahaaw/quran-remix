@@ -1,7 +1,7 @@
-export default function copy( element ) {
+export default function copy( i ) {
 
     let doc = document,
-    text = doc.getElementById( element ),
+    text = doc.getElementById( i ),
     range, selection;
 
     if (doc.body.createTextRange){
@@ -19,5 +19,7 @@ export default function copy( element ) {
     }
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
-    // document.getElementById("btn").value="Copied";
+    let copyButton = document.querySelector( `.copy-${ i }`);
+    copyButton.innerHTML = 'disalin';
+    setTimeout(() => copyButton.innerHTML = 'salin', 3000);
 }

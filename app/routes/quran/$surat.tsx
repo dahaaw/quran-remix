@@ -17,23 +17,24 @@ export const loader: LoaderFunction = ( { params }) => {
 function Surat( { request }:any ) {
   
   const { dataSurat, detailSurat } = useLoaderData();
+  
   return (
     <div>
       <div>{ dataSurat.nama_latin }</div>
       <div className='mt-2'>
-        { detailSurat.ayat.map( ( v:any, i:any ) => {
+        { detailSurat?.ayat?.map( ( v:any, i:any ) => { 
+          i++;
           return(
             <div key={ i } className='mt-8 pb-2 border-b'>
-              <div className='text-right text-lg'>{ v.ar }</div>
-              <div className='text-xs mt-2'>{ v.nomor }. { v.idn }</div>
+              <div id={ i }>
+                <div dir='rtl' className='text-lg'>{ v.ar }</div>
+                <div className='text-xs mt-2'>{ v.nomor }. { v.idn }</div>
+              </div>
 
-              <div 
-                className='text-xs text-right text-gray-500 cursor-pointer'
-                onClick={ (e) => {
+              <div className='text-xs text-right text-gray-500'>
+                <span className={ `cursor-pointer copy-${ i }` } onClick={ (e) => {
                   lib.copy( i )
-                }}
-              >
-                  salin
+                }} >salin</span>
               </div>
             </div>
           )

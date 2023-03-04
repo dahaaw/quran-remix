@@ -533,6 +533,11 @@ video {
   top: 0px;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -545,12 +550,12 @@ video {
   margin-top: 2rem;
 }
 
-.flex {
-  display: flex;
+.block {
+  display: block;
 }
 
-.hidden {
-  display: none;
+.flex {
+  display: flex;
 }
 
 .h-12 {
